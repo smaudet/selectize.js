@@ -179,7 +179,9 @@ $.extend(Selectize.prototype, {
 		if ($input.attr('autocapitalize')) {
 			$control_input.attr('autocapitalize', $input.attr('autocapitalize'));
 		}
-		$control_input[0].type = $input[0].type;
+		if(typeof $input[0].type !== 'undefined') {
+      $control_input[0].type = $input[0].type;
+    }
 
 		self.$wrapper          = $wrapper;
 		self.$control          = $control;
